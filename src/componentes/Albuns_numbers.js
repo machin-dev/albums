@@ -14,7 +14,7 @@ export default function Albuns_numbers(props){
        }
        useEffect(()=>{get_posts()},[cant]);
     return(
-        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary bg-opacity-50">
+        <span className="rounded-pill bg-secondary bg-opacity-50">
             {cant}
         </span>
     );

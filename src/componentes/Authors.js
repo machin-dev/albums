@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from "react-router-dom";
 import Posts_numbers from "./Posts_numbers";
 import Albuns_numbers from "./Albuns_numbers";
+import { CardText } from "react-bootstrap-icons";
 
 
 export default function Authors(props){
@@ -17,21 +18,22 @@ export default function Authors(props){
     console.log(user_activo);    
     useEffect(()=>{get_auth()},[]);     
     return(
-      <div className="container-fluid bgImg">
+      <div className="container-fluid bgImg vh-100">
            {authors ? (
             <>
-            
-            <ul className="list-group list-group-numbered">
-             {authors.map((a,index)=>(
-                <li className="list-item bg-light bg-opacity-50 m-2 text-start" key={index}>
-                  <h4 className="fw-bold d-inline-flex" key={index}>{a.id}-{a.name}</h4>
-                  <p className="d-inline-block text-secondary ms-4">User Name: {a.username} </p>
-                  <Link className="d-inline-block text-primary ms-4 position-relative" onClick={()=>setUser_activo(a)} to='/User_posts'>Ver Posts: <Posts_numbers user={a.id} /></Link>                 
-                  <p className="d-inline-block text-success ms-4 position-relative">Albums: <Albuns_numbers user={a.id} /></p>                 
-                  </li>
+              {authors.map((a,index)=>(
+                <div className="btn card d-inline-flex m-1 shadow-sm mb-1 border-0" style={{height:450, width:300}} key={index}>
+                <div className="card-body">
+                  <h5 className="card-title">{a.name}</h5>
+                  <h6 className="card-subtitle mb-2 text-muted">user name: {a.username}</h6>
+                  <p claclassNamess="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>                  
+                </div>
+                <p className='position-relative'>Posts: <Link to='/User_posts' className=''><Posts_numbers user={a.id} /></Link></p>
+                <p className='position-relative'>Albums: <Link to='#' className=''><Albuns_numbers user={a.id} /></Link></p>
+              </div>
               ))}
-             </ul>
-             </>
+            
+            </>
              ):(
               <></>
              )}              

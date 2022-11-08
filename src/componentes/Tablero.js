@@ -7,7 +7,7 @@ import Album_details from "./Album_details";
 export default function Tablero(){
     const [aActivo, setAActivo]=useState(null);
     return(
-        <div className='container-fluid border '>
+        <div className='container-fluid  '>
             <div className="row">
              <div className="col col-lg-3 bg-dark border vh-100 overflow-auto">
                 <ListAlbums act={aActivo} setAct={setAActivo}/>
