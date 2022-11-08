@@ -11,7 +11,7 @@ export default function User_posts(props){
         const result=await api.json();        
          setPosts(result);           
        }
-       useEffect(()=>{get_posts()},[])
+       useEffect(()=>{get_posts()})
     return(
       <div className='container-fluid bg-light'>      
        

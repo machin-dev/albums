@@ -11,11 +11,9 @@ export default function Authors(props){
     const {user_activo, setUser_activo}=props;
     const get_auth=async()=>{
         const api=await fetch('https://jsonplaceholder.typicode.com/users');
-        const result=await api.json();
-       // console.log(result);
+        const result=await api.json();      
         setAuthors(result);            
-       }  
-    console.log(user_activo);    
+       }   
     useEffect(()=>{get_auth()},[]);     
     return(
       <div className="container-fluid bgImg vh-100">
