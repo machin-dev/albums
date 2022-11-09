@@ -11,7 +11,7 @@ export default function Posts_numbers(props){
         console.log(result.length);         
         setCant(result.length);              
        }
-       useEffect(()=>{get_posts()},[cant]);
+       useEffect(()=>{get_posts()});
     return(
         <span className=" rounded-pill bg-secondary bg-opacity-50">
             {cant}

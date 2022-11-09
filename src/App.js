@@ -20,7 +20,7 @@ function App() {
        <NavBar />
         <Routes>
           <Route path="/albums" element={<Tablero />} />
-          <Route path='authors' element={<Authors user_activo={user_activo}  setUser_activo={setUser_activo}/>} />
+          <Route path='authors' element={<Authors />} />
           <Route path='/User_posts' element={< User_posts user_activo={user_activo} setUser_activo={setUser_activo}/>} />
           <Route path='/' element={<Home />} />
         </Routes>

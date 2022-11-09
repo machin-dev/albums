@@ -6,13 +6,11 @@ import { useState } from "react";
 export default function Photos(props){
    const aId=props.activo;
    const [foto,setFoto]=useState(null);   
-   const dir='https://jsonplaceholder.typicode.com/albums/'+aId+'/photos';
+   const dir='https://jsonplaceholder.typicode.com/albums/'+aId.id+'/photos';
    const fotos=async()=>{
     const api=await fetch(dir);
-    const result=await api.json();    
-    console.log(result);    
-    setFoto(result);  
-        
+    const result=await api.json();  
+    setFoto(result);   
    }  
    useEffect(()=>{fotos()},[aId]);
  return(

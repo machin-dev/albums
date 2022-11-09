@@ -9,22 +9,20 @@ export default function ListAlbums(props){
     const albums=async()=>{
         const api=await fetch('https://jsonplaceholder.typicode.com/albums');
         const result=await api.json();
-        /*console.log(result);*/
         setAlbum(result);            
        } 
        const activar=(i)=>{
-        /*console.log(i);*/
-        setAct(i);
+                setAct(i);
+                console.log(i);                
        }
-      useEffect(()=>{albums()},[]);
-      
+      useEffect(()=>{albums()});      
        return (                  
           <ul className='list-group m-0'>           
              {album ? (
               <>
                {
                 album.map((a,index)=>(
-                       <li className='btn list-group-item text-start' key={index} title={a.title} onClick={()=>activar(a.id)} >                         
+                       <li className='btn list-group-item text-start' key={index} title={a.title} onClick={()=>activar(a)} >                         
                          <p className='text-secondary fw-bold'>{a.id}: {a.title}</p>
                        </li>
                     ))

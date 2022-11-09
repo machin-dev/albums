@@ -6,13 +6,11 @@ import Photos from "./Photos";
 
 export default function Album_details(props){
     const album=props.activo;
-    const [detalles,setDetalles]=useState('');
-    const [fotos, SetFotos]=useState('null');
-    const dir='https://jsonplaceholder.typicode.com/albums/'+album;
+    const [detalles,setDetalles]=useState('');    
+    const dir='https://jsonplaceholder.typicode.com/albums/'+album.id;
     const albums=async()=>{
         const api=await fetch(dir);
-        const result=await api.json();
-        console.log(result);        
+        const result=await api.json();        
         setDetalles(result);
     }
     useEffect(()=>{albums()},[]);
@@ -21,7 +19,7 @@ export default function Album_details(props){
               { detalles ?
                (
                 <div className='conatainer-fluid'>
-                  <h2 className='text-primary p-2 text-uppercase'><span className='text-secondary text-shadow'>Album:</span> {detalles.title}</h2>
+                  <h2 className='text-primary p-2 text-uppercase'><span className='text-secondary text-shadow'>Album:</span> {album.title}</h2>
                   <div className='container-fluid'>                    
                     <Photos activo={album} />
                   </div>

@@ -6,9 +6,8 @@ import Albuns_numbers from "./Albuns_numbers";
 import { CardText } from "react-bootstrap-icons";
 
 
-export default function Authors(props){
-    const [authors, setAuthors]=useState('');
-    const {user_activo, setUser_activo}=props;
+export default function Authors(){
+    const [authors, setAuthors]=useState('');    
     const get_auth=async()=>{
         const api=await fetch('https://jsonplaceholder.typicode.com/users');
         const result=await api.json();      

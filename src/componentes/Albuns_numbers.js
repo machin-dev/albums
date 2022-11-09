@@ -1,7 +1,7 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect } from "react";
-import Album_details from "./Album_details";
+
 
 export default function Albuns_numbers(props){
     const user=props.user;
@@ -11,7 +11,7 @@ export default function Albuns_numbers(props){
         const result=await api.json();          
         setCant(result.length);              
        }
-       useEffect(()=>{get_posts()},[cant]);
+       useEffect(()=>{get_posts()});
     return(
         <span className="rounded-pill bg-secondary bg-opacity-50">
             {cant}
