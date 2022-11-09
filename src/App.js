@@ -12,18 +12,18 @@ import User_posts from './User_posts';
 
 
 function App() {
-   const [user_activo, setUser_activo]=useState('');
+   const [user_activo, setUser_activo]=useState('');   
   return (
-    <div className="conatainer-fluid bg-light">
-              
+    <div className="conatainer-fluid bg-light">              
        <Router>
-       <NavBar />
+       <NavBar />       
         <Routes>
           <Route path="/albums" element={<Tablero />} />
-          <Route path='authors' element={<Authors />} />
+          <Route path='authors' element={<Authors author_activo={user_activo} setAuthor_activo={setUser_activo}/>} />
           <Route path='/User_posts' element={< User_posts user_activo={user_activo} setUser_activo={setUser_activo}/>} />
           <Route path='/' element={<Home />} />
         </Routes>
+        
        </Router>     
      
     </div>

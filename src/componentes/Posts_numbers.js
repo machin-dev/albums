@@ -6,7 +6,7 @@ export default function Posts_numbers(props){
     const user=props.user;
     const [cant,setCant]=useState(0);
     const get_posts=async()=>{
-        const api=await fetch('https://jsonplaceholder.typicode.com/users/'+user+'/posts');        
+        const api=await fetch('https://jsonplaceholder.typicode.com/users/'+user.id+'/posts');        
         const result=await api.json();
         console.log(result.length);         
         setCant(result.length);              

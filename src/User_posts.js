@@ -1,23 +1,27 @@
 import React, { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from "react-router-dom";
-import {  Mailbox2, PersonFill } from "react-bootstrap-icons";
+import {  ArrowBarLeft, ArrowBarRight, Mailbox2, PersonFill } from "react-bootstrap-icons";
 
 export default function User_posts(props){
-    const {user_activo, setUser_activo}=props;
+    const user_activo=props.user_activo;
     const [posts, setPosts]=useState('');        
     const get_posts=async()=>{
         const api=await fetch('https://jsonplaceholder.typicode.com/users/'+user_activo.id+'/posts');        
-        const result=await api.json();        
+        const result=await api.json();          
          setPosts(result);           
        }
-       useEffect(()=>{get_posts()})
+       useEffect(()=>{get_posts()},[]);
     return(
       <div className='container-fluid bg-light'>      
        
         { posts ? (
             <div className='container-fluid'>
-              <h1 className='text-secondary text-center'>{user_activo.name}</h1>
+              <div className='container-fluid d-flex justify-content-center'>
+             
+               <h1 className='text-secondary text-center'>{user_activo.name}</h1>
+             
+             </div>  
               <div className='container-flui d-flex justify-content-center'>
               <p className='m-2'><PersonFill /> {user_activo.username} </p>               
               <p className='m-2'><Mailbox2 /> {user_activo.email}</p> 
@@ -35,8 +39,8 @@ export default function User_posts(props){
         ):(
             <button className="btn btn-danger">Home</button>        
         )}
-         <Link className='btn btn-warning' to='/Authors' >Atras</Link>
-         <Link className='btn btn-danger' to='/Authors' >Home</Link>
+         
+         
       </div>
     );
 }
