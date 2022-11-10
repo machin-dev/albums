@@ -19,7 +19,10 @@ export default function User_posts(props){
             <div className='container-fluid'>
               <div className='container-fluid d-flex justify-content-center'>
              
-               <h1 className='text-secondary text-center'>{user_activo.name}</h1>
+               <h1 className='text-secondary text-center'>
+                {user_activo.name}
+                <spam >{}</spam>
+               </h1>
              
              </div>  
               <div className='container-flui d-flex justify-content-center'>
@@ -27,7 +30,7 @@ export default function User_posts(props){
               <p className='m-2'><Mailbox2 /> {user_activo.email}</p> 
               </div>
               {posts.map((p,index)=>(
-                <div className="card d-inline-flex" style={{height:450, width:300}} key={index}>
+                <div className="card d-inline-flex m-2 shadow" style={{height:400, width:300}} key={index}>
                 <div className="card-body">
                   <h5 className="card-title">{p.title}</h5>
                   <h6 className="card-subtitle mb-2 text-muted">usuario: {user_activo.name}</h6>
