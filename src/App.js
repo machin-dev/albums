@@ -15,7 +15,8 @@ function App() {
    const [user_activo, setUser_activo]=useState('');   
   return (
     <div className="conatainer-fluid bg-light">              
-       <Router>
+       <Router  basename={'/albums'}>
+        
        <NavBar />       
         <Routes>
           <Route path="/albums" element={<Tablero />} />

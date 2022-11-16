@@ -20,8 +20,7 @@ export default function User_posts(props){
               <div className='container-fluid d-flex justify-content-center'>
              
                <h1 className='text-secondary text-center'>
-                {user_activo.name}
-                <spam >{}</spam>
+                {user_activo.name}                
                </h1>
              
              </div>  
