@@ -13,16 +13,14 @@ export default function User_posts(props){
        }
        useEffect(()=>{get_posts()},[]);
     return(
-      <div className='container-fluid bg-light'>      
+      <div className='container-fluid bg-light text-center'>      
        
         { posts ? (
             <div className='container-fluid'>
-              <div className='container-fluid d-flex justify-content-center'>
-             
+              <div className='container-fluid d-flex justify-content-center'>             
                <h1 className='text-secondary text-center'>
                 {user_activo.name}                
-               </h1>
-             
+               </h1>             
              </div>  
               <div className='container-flui d-flex justify-content-center'>
               <p className='m-2'><PersonFill /> {user_activo.username} </p>               
