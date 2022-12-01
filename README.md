@@ -1,4 +1,4 @@
-Http:://albums-site.netlify.app
+http:://albums-site.netlify.app
 
 # Getting Started with Create React App
 
